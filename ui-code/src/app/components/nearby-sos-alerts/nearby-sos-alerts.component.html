@@ -1,0 +1,22 @@
+<div *ngIf="activeSos != null">
+    ACTIVE SOS
+    <div id="map"></div>
+    <button mat-button color="primary" style="border: 1px solid; margin: 10px;
+    border: 1px solid;
+    margin: 20px;
+    font-size: 16px;" (click)="stopSos()">STOP HELP!</button>
+</div>
+
+<div *ngIf="activeSos == null">
+    <div *ngFor="let sos of nearbySosData" >
+        <div>
+            <span style="font-size: 20px;">{{sos.sosUserId.sosId}}</span>
+            <button mat-button color="primary" style="border: 1px solid; margin: 10px;
+            border: 1px solid;
+        margin: 20px;
+        font-size: 16px;" (click)="help(sos)">HELP!</button>
+    
+            <!-- {{sosData}} -->
+        </div>
+    </div>
+</div>

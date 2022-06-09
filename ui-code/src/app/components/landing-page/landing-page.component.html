@@ -1,0 +1,42 @@
+<!-- <mat-form-field appearance="outline">
+  <mat-label>Outline form field</mat-label>
+  <input matInput placeholder="Placeholder">
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <mat-hint>Hint</mat-hint>
+</mat-form-field> -->
+
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Login">
+
+        <div style="display: flex; justify-content: center; align-items: center;margin-bottom: 213px;padding: 20px; flex-direction: column;">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="email">
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+            <button mat-button color="primary" style="border: 1px solid;" (click)="login()">Login</button>
+        </div>
+    </mat-tab>
+    <mat-tab label="Register">
+        <div style="display: flex; justify-content: center; align-items: center;margin-bottom: 213px;padding: 20px; flex-direction: column;">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="phoneNumber">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Relatives</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="relatives">
+            </mat-form-field>
+            <button mat-button color="primary" style="border: 1px solid;" (click)="register()">Register</button>
+        </div>
+    </mat-tab>
+</mat-tab-group>

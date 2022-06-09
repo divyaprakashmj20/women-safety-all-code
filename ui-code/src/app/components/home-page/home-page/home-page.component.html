@@ -1,0 +1,81 @@
+<!-- <mat-form-field appearance="outline">
+  <mat-label>Outline form field</mat-label>
+  <input matInput placeholder="Placeholder">
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <mat-hint>Hint</mat-hint>
+</mat-form-field> -->
+
+<mat-tab-group mat-align-tabs="center" [selectedIndex]="1">
+    <mat-tab label="UserDetails">
+        <ng-template matTabContent>  
+        <div
+            style="display: flex; justify-content: center; align-items: center;margin-bottom: 213px;padding: 20px; flex-direction: column;">
+            <h1>User Details</h1>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Id</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="userData.id" [disabled]="true">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="userData.name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="userData.email" [disabled]="true">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="userData.phoneNumber" [disabled]="true">
+            </mat-form-field>
+            <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+                <h2>Relatives</h2>
+                <div *ngFor="let relative of userData.relatives">
+                    <div
+                        style="padding: 10px;border: 1px solid #a7a7a7;border-radius: 6px; margin: 10px; display: flex;">
+                        <input matInput placeholder="Placeholder" [(ngModel)]="relative.name" [disabled]="true"
+                            style="width: 65%;">
+                        <button mat-button color="primary" style="border: 1px solid;"
+                            (click)="deleteRelative(relative)">Delete</button>
+                    </div>
+                </div>
+
+                <h3>Add Relative</h3>
+                <div>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Placeholder" [(ngModel)]="relativeEmailId">
+                    </mat-form-field>
+                    <button mat-button color="primary" style="border: 1px solid; margin: 10px;"
+                        (click)="addRelative()">Add</button>
+                </div>
+            </div>
+        </div>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="SOS">
+        <ng-template matTabContent>  
+        <div
+            style="display: flex; justify-content: center; align-items: center;margin-bottom: 213px;padding: 20px; flex-direction: column;">
+            <app-sos-component></app-sos-component>
+        </div>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Nearby SOS alerts">
+        <ng-template matTabContent>  
+        <div
+            style="display: flex; justify-content: center; align-items: center;margin-bottom: 213px;padding: 20px; flex-direction: column;">
+            <app-nearby-sos-alerts></app-nearby-sos-alerts>
+        </div>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Your Active Alerts">
+        <ng-template matTabContent>  
+        <div
+            style="display: flex; justify-content: center; align-items: center;margin-bottom: 213px;padding: 20px; flex-direction: column;">
+
+        </div>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>
